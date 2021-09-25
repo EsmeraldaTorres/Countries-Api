@@ -1,0 +1,114 @@
+.weather-card{
+    padding: 2%;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    background-color: rgba(84, 49, 100, 0.568);
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+.weather-details-container{
+    padding:3%;
+    border: none;
+    font-size:1.2rem;
+    border-radius: 10px;
+    /* background-color: burlywood; */
+    width: 100%;
+    margin: 10px;
+}
+.weather-details-container p{
+    text-align: center;
+}
+.grades{
+    font-size: 3rem;
+}
+.details{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2%;
+    border-bottom: solid 1px black;
+}
+.weather-details{
+    padding: 0 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.rain{
+    font-size: 1rem;
+}
+.padding{
+    justify-content: center;
+    display: flex;
+    /* height: 100vh; */
+    flex-wrap: wrap;
+    padding: 30px 10%;
+    background-color: rgb(228 226 219);
+    align-items: center;
+}
+.other-details-container{
+    width:100%;
+    padding:5%;
+    border:none;
+    border-radius: 10px;
+    background-color: blue;
+}
+.display-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.weather-card img{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.space{
+    background-color:rgba(84, 49, 100, 0.568);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    display:flex;
+    justify-content: space-evenly;
+}
+.line-end{
+    display: flex;
+    align-items: center;
+}
+@media (min-width: 756px){
+    .weather-details-container{
+        width: 55%;
+    }
+    .weather-details{
+        padding: 0 15%;
+    }
+    .weather-card{
+        width: 40%;
+    }
+    .details{
+        width: 50%;
+        flex-direction: column;
+    }
+}
+@media (min-width: 1024px){
+    .weather-details{
+        padding: 0 10%;
+    }
+    .weather-card{
+        font-size: 2rem;
+    }
+    .grades{
+        font-size: 3.5rem;
+    }
+    .rain{
+        font-size: 1.5rem;
+    }
+    .details{
+        width: 25%;
+    }
+}
