@@ -20,14 +20,15 @@ const [num, setNum] = useState(15)
 const handleCountries = async () =>{
   setLoading(true)
   try{
-    const urlAPI = await fetch (`https://restcountries.com/v2/all`)
+    const urlAPI = await fetch (`https://restcountries.com/v3/all`)
     const answerApi = await urlAPI.json()
+    console.log(answerApi)
     setLoading(false)
-    answerApi.sort(function (){return Math.random()-0.5})
+    // answerApi.sort(function (){return Math.random()-0.5})
     SetAllCountries(answerApi)
     const tenCountries = answerApi.slice(numBef,num)
-    setCountries(tenCountries)
-    console.log(countries)
+    // setCountries(tenCountries)
+    console.log(tenCountries)
   }catch(error){
     setLoading(false)
     console.log(error)
@@ -48,7 +49,6 @@ const more = () =>{
   setCountries([...countries,...newCountries])
 }
 
-// Necesito una función que 
 
 useEffect(() => {
   handleCountries()
@@ -64,6 +64,7 @@ useEffect(() => {
         <Link to={`/SearchCountry`} className="search-txt"><SearchIcon className="search-icon"/></Link>
         </div>
       </div>
+      
       {loading ? <Loading/> : ( 
       <div className="countries-container">
         {countries.map(country => (
@@ -74,6 +75,7 @@ useEffect(() => {
             key={country.id}
           />
         ))}
+        
         <div className="align-center bg-grey">
           <button onClick={more}> View More</button>
         </div>
