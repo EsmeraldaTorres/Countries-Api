@@ -68,7 +68,6 @@ return (
          loading ? <Loading/> : 
          countrycapital ? 
           (
-            console.log(countrycapital.name.common),
             <Card name={countrycapital.name.common} flags={countrycapital.flags[1]} capital={countrycapital.capital}/>
             )
           : <>

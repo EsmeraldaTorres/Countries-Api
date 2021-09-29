@@ -1,7 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import IconWeather from "../IconWeather"
-
 
 const ShowAllCountries = props => {
   const {name,flags,capital} = props;

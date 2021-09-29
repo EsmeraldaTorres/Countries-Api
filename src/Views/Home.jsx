@@ -34,7 +34,6 @@ const handleCountries = async () =>{
     console.log(error)
   }
 }
-console.log(countries)
 
 const more = () =>{
   for(let i = 0; i<1; i++){
@@ -57,7 +56,7 @@ useEffect(() => {
   return (
       <>
       <Header/>
-      <img src="https://images.pexels.com/photos/6397/white-globe-on-a-desk.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" className="background"/>
+      <img src="https://images.pexels.com/photos/6397/white-globe-on-a-desk.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="img1" className="background"/>
       <div className="title-search">
         <h1 className="title">COUNTRIES OF THE WORLD</h1>
         <div>

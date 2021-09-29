@@ -17,9 +17,10 @@ const fetchWeatherApi = async()=>{
     console.log(error)
     }
 }
-console.log(icon)
-useEffect( fetchWeatherApi()
-, [])
+useEffect(() => {
+    fetchWeatherApi()
+  }, [])
+
 
     return(
         <div>

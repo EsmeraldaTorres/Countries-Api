@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link} from "react-router-dom";
 // Import Styles & Icons
 import "../styles/details.css";
-import HomeWorkIcon from '@material-ui/icons/HomeWork';
+
 // Import Components
-import Header from "../Components/Header";
 import Loading from "../Components/Loading"
 import Details from "../Components/Details"
 
@@ -31,14 +30,9 @@ const CountryInformation = props => {
     fetchDetailsAPI();
   }, []);
 
-
-  // for(var key in details.currencies){
-  //   console.log(details.currencies.hasOwnProperty(key))
-  // }
-// console.log(details.getOwnPropertyDescriptor(languages,currencies))
   return (
     <>
-      {
+      { loading ? <Loading/> : 
         details && details.map((detail,index) => (
         <Details
         capital={detail.capital && detail.capital[0].length > 0 ? detail.capital[0] : "This country doesn´t have capital"}

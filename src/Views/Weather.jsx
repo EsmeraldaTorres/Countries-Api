@@ -55,7 +55,7 @@ const Weather = props =>{
                   <p className="grades">{information.temper}°</p>
                   <p>{information.description}</p>
                 </div>
-                <img src={`http://openweathermap.org/img/wn/${information.icon}@2x.png`}/>
+                <img src={`http://openweathermap.org/img/wn/${information.icon}@2x.png`} alt="icon"/>
               </div>
               <p className="rain">{information.all}% rain probability</p>
         </div>
