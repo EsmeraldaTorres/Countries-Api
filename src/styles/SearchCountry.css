@@ -42,7 +42,6 @@ label, input, .btn-search{
 .bg{
     height: 100vh;
     background-color: rgb(228 226 219);
-    /* background-color: rgba(223, 197, 54, 0.418); */
 }
 .card img{
     width: 50%

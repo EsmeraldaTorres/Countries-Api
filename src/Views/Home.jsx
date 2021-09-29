@@ -22,12 +22,12 @@ const handleCountries = async () =>{
   try{
     const urlAPI = await fetch (`https://restcountries.com/v3/all`)
     const answerApi = await urlAPI.json()
-    console.log(answerApi)
+    // console.log(answerApi)
     setLoading(false)
-    // answerApi.sort(function (){return Math.random()-0.5})
+    answerApi.sort(function (){return Math.random()-0.5})
     SetAllCountries(answerApi)
     const tenCountries = answerApi.slice(numBef,num)
-    // setCountries(tenCountries)
+    setCountries(tenCountries)
     console.log(tenCountries)
   }catch(error){
     setLoading(false)
@@ -67,12 +67,12 @@ useEffect(() => {
       
       {loading ? <Loading/> : ( 
       <div className="countries-container">
-        {countries.map(country => (
+        {countries.map((country, index) => (
           <ShowAllCountries
-            name={country.name}
+            name={country.name.common}
             flags={country.flags[0]}
-            capital={country.capital}
-            key={country.id}
+            capital={country.capital && country.capital[0].length > 0 ? country.capital[0] : "This country doesn´t have capital"}
+            key={index}
           />
         ))}
         
