@@ -11,38 +11,38 @@ const Weather = props =>{
     // Estado
     const [information, setInformation] = useState([])
 
-    const weatherInformation = async ()=>{
-    try{
-        const answerApi = await fetch
-        (`https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=f414ea4cda4b3c1ee3c2896e8ca2e32c`)
-        const response = await answerApi.json()
-        console.log(response)
-        const {icon} = response.weather[0]
-        const {description} = response.weather[0]
-        const {feels_like} = response.main
-        const {all} = response.clouds
-        const {timezone} = response
-        const feels = Math.round(feels_like -273.15)
-        const {temp_max} = response.main
-        const {temp_min} = response.main
-        const {lat} = response.coord
-        const {lon} = response.coord
-        const {humidity} = response.main
-        const HTemp = Math.round(temp_max - 273.15)
-        const LTemp = Math.round(temp_min - 273.15)
-        const {temp} = response.main
-        const temper = Math.round(temp-273.15);
-        const {speed} = response.wind
-        const {pressure} = response.main
-        const {sea_level} = response.main
-        setInformation({timezone,humidity,icon,sea_level,pressure,feels,speed,lat, HTemp, LTemp, lon, description,all, temper,})
-      }catch(error){
-        console.log(error)
-      }}
-
       useEffect(() => {
+        const weatherInformation = async ()=>{
+          try{
+              const answerApi = await fetch
+              (`https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=f414ea4cda4b3c1ee3c2896e8ca2e32c`)
+              const response = await answerApi.json()
+
+              const {icon} = response.weather[0]
+              const {description} = response.weather[0]
+              const {feels_like} = response.main
+              const {all} = response.clouds
+              const {timezone} = response
+              const feels = Math.round(feels_like -273.15)
+              const {temp_max} = response.main
+              const {temp_min} = response.main
+              const {lat} = response.coord
+              const {lon} = response.coord
+              const {humidity} = response.main
+              const HTemp = Math.round(temp_max - 273.15)
+              const LTemp = Math.round(temp_min - 273.15)
+              const {temp} = response.main
+              const temper = Math.round(temp-273.15);
+              const {speed} = response.wind
+              const {pressure} = response.main
+              const {sea_level} = response.main
+              setInformation({timezone,humidity,icon,sea_level,pressure,feels,speed,lat, HTemp, LTemp, lon, description,all, temper,})
+            }catch(error){
+              console.log(error)
+            }}
+      
         weatherInformation();
-      }, []);
+      }, [capital]);
 
     return(
         <>

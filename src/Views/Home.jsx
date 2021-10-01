@@ -17,23 +17,6 @@ const [numBef,setNumBef] =useState(0)
 const [num, setNum] = useState(15)
 
 // Functions
-const handleCountries = async () =>{
-  setLoading(true)
-  try{
-    const urlAPI = await fetch (`https://restcountries.com/v3/all`)
-    const answerApi = await urlAPI.json()
-    // console.log(answerApi)
-    setLoading(false)
-    answerApi.sort(function (){return Math.random()-0.5})
-    SetAllCountries(answerApi)
-    const tenCountries = answerApi.slice(numBef,num)
-    setCountries(tenCountries)
-    console.log(tenCountries)
-  }catch(error){
-    setLoading(false)
-    console.log(error)
-  }
-}
 
 const more = () =>{
   for(let i = 0; i<1; i++){
@@ -50,8 +33,25 @@ const more = () =>{
 
 
 useEffect(() => {
+  const handleCountries = async () =>{
+    setLoading(true)
+    try{
+      const urlAPI = await fetch (`https://restcountries.com/v3/all`)
+      const answerApi = await urlAPI.json()
+      // console.log(answerApi)
+      setLoading(false)
+      answerApi.sort(function (){return Math.random()-0.5})
+      SetAllCountries(answerApi)
+      const tenCountries = answerApi.slice(numBef,num)
+      setCountries(tenCountries)
+      console.log(tenCountries)
+    }catch(error){
+      setLoading(false)
+      console.log(error)
+    }
+  }
   handleCountries()
-}, [])
+}, [num, numBef])
 
   return (
       <>

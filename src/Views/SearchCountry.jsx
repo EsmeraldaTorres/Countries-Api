@@ -36,13 +36,13 @@ const SearchCountry = () => {
       }
     }
     handleCallAPI();
-}, [click]);
+}, [click, inputText]);
 
   const handleClick = () => {
     setClick(!click)
     setWorldImage(false)
   }
-// console.log(countrycapital.flags[0])
+
 return (
     <>
     <Header/>

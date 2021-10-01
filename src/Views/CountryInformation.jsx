@@ -28,7 +28,7 @@ const CountryInformation = props => {
       }
     };
     fetchDetailsAPI();
-  }, []);
+  }, [(name)]);
 
   return (
     <>
