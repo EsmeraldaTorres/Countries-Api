@@ -13,24 +13,17 @@ const Home=()=>{
 const [countries, setCountries] = useState([]);
 const [loading, setLoading] = useState(false)
 const [allCountries, SetAllCountries] = useState([])
-const [numBef,setNumBef] =useState(0)
-const [num, setNum] = useState(15)
+const [initialNum,setInitialNum] =useState(10)
+const [endNum, setEndNum] = useState(20)
 
 // Functions
-
 const more = () =>{
-  for(let i = 0; i<1; i++){
-    setNumBef(prevNumBef => prevNumBef + 15)
-    console.log(numBef)
-    setNum(prevNum => prevNum+ 15)
-    console.log(num)
-  }
-  const newCountries = allCountries.slice(numBef,num);
-  console.log(numBef)
-  console.log(num)
+  setInitialNum(initialNum + 10)
+  setEndNum(endNum + 10)
+  const newCountries = allCountries.slice(initialNum,endNum);
+  console.log(newCountries)
   setCountries([...countries,...newCountries])
 }
-
 
 useEffect(() => {
   const handleCountries = async () =>{
@@ -42,7 +35,7 @@ useEffect(() => {
       setLoading(false)
       answerApi.sort(function (){return Math.random()-0.5})
       SetAllCountries(answerApi)
-      const tenCountries = answerApi.slice(numBef,num)
+      const tenCountries = answerApi.slice(0,10)
       setCountries(tenCountries)
       console.log(tenCountries)
     }catch(error){
@@ -51,7 +44,8 @@ useEffect(() => {
     }
   }
   handleCountries()
-}, [num, numBef])
+}, [])
+
 
   return (
       <>
