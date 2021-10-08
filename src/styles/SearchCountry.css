@@ -15,6 +15,9 @@
     border: none;
     border-radius: 10px;
 }
+.input-and-btn{
+    display: block;
+}
 .search-txt{
     text-align: center;
     color: orange;
@@ -41,6 +44,7 @@ label, input, .btn-search{
 }
 .bg{
     height: 100vh;
+    width: 100%;
     background-color: rgb(228 226 219);
 }
 .card img{
@@ -59,5 +63,9 @@ label, input, .btn-search{
 @media (min-width:756px) {
     .container-search{
         display: flex;
+    }
+    .input-and-btn{
+        display: flex;
+        justify-self: content;
     }
 }

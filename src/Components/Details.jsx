@@ -6,8 +6,10 @@ import Header from "../Components/Header"
 const Details = props => {
     const {name, flags, capital, region, subregion, officialName, independent} = props
     return (
-        <>  <Header/>
-        <div className="container-details bg">
+        <>  
+        <Header/>
+        <section>
+        <div className="container-details">
               <h2>{name}</h2>
               <h3>Official Name:  {officialName}</h3>
               <div className="details-information">
@@ -24,10 +26,11 @@ const Details = props => {
                   <p>{independent}</p>
                 </div>
               </div>
+              <div className="align-center">
+                <button className="btn-back"><Link to={`/SearchCountry`} className="btn">Back</Link></button>
+              </div>
         </div>
-        <div className="align-center">
-          <button className="btn-back"><Link to={`/SearchCountry`} className="btn">Back</Link></button>
-        </div>
+        </section>
         </>
     )
 }

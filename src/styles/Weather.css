@@ -44,9 +44,10 @@
 .padding{
     justify-content: center;
     display: flex;
-    /* height: 100vh; */
+    height: 95%;
+    width: 100%;
     flex-wrap: wrap;
-    padding: 30px 10%;
+    padding: 0px 10%;
     background-color: rgb(228 226 219);
     align-items: center;
 }
@@ -61,7 +62,6 @@
     display: flex;
     justify-content: center;
 }
-
 .weather-card img{
     display:flex;
     justify-content: center;

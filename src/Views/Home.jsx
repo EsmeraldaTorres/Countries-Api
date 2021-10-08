@@ -50,6 +50,7 @@ useEffect(() => {
   return (
       <>
       <Header/>
+      <section>
       <img src="https://images.pexels.com/photos/6397/white-globe-on-a-desk.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="img1" className="background"/>
       <div className="title-search">
         <h1 className="title">COUNTRIES OF THE WORLD</h1>
@@ -74,6 +75,7 @@ useEffect(() => {
         </div>
       </div> 
       )} 
+      </section>
     </>
   );
 }

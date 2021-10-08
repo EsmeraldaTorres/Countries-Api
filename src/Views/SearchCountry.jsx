@@ -50,7 +50,7 @@ return (
     <div className="container">
       <div className="container-search">
         <label for="country-name">Type the country's name</label>
-        <div className="display-flex">
+        <div className="input-and-btn">
           <input type="text" onChange={evento => setInputText(evento.target.value)}/>
           <button onClick={handleClick} className="search-btn">search</button>
         </div>
@@ -75,7 +75,7 @@ return (
       }
     </div>
     <div className="align-center">
-    <button className="btn-back"><Link to={`/`} className="btn">Back</Link></button>
+      <button className="btn-back"><Link to="/" className="btn">Back</Link></button>
     </div>
     </section>
     </>
